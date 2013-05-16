@@ -1,17 +1,16 @@
 <div class='row' data-ng-controller='EpisodesController'>
-  <div id='episode-view-container' class='span8'>
-    <div id='episode-view' data-ng-show='selectedEpisode'>
-      <h3>{{ selectedEpisode.title }}</h3>
-      <div flow-player='' id='player'></div>
-      <p>{{ selectedEpisode.description }}</p>
-    </div>
-  </div>
-  <div id='episode-list-container' class='span4'>
-    <h3>Episodes</h3>
+  <div id='episode-list-container'>
     <ul id='episode-list'>
-      <li data-ng-repeat='episode in episodes' data-ng-class='{active: $index == selectedRow}' data-ng-click='selectEpisode(episode, $index)'>
-        {{ episode.title }} ({{ episode.duration }})
+      <li data-ng-repeat='episode in episodes'>
+        <h3 data-ng-class='{active: $index == selectedRow}' data-ng-click='selectEpisode(episode, $index)'>{{ episode.title }} <small>({{ episode.duration }})</small></h3>
       </li>
     </ul>
+  </div>
+  <div id='episode-view-container'>
+    <div id='episode-view' data-ng-show='selectedEpisode'>
+      <h2>{{ selectedEpisode.title }}</h2>
+      <p>{{ selectedEpisode.description }}</p>
+      <div flow-player='' id='player'></div>
+    </div>
   </div>
 </div>

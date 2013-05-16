@@ -12,19 +12,5 @@
  *= require_tree .
  */
 
-body {
-  margin-top: 60px;
-}
 
-.active {
-  color: red;
-}
 
-#episode-list {
-  overflow: auto;
-  overflow-y: scroll;
-  height: 500px;
-}
-#player {
-  height: 500px;
-}
